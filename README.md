@@ -17,3 +17,6 @@ If the car is too close the LEDs start to flash.
 * many wire
 * a soldering iron
 * patience 😉
+
+## circuit diagram
+![curcuit diagram](https://raw.githubusercontent.com/MCeddy/distance-warner/master/docs/sketch_bb.png)
