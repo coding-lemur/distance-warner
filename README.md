@@ -14,6 +14,7 @@ If the car is too close the LEDs start to flash.
 * one Arduino Nano or Uno
 * one HC-SR04
 * a few WS2812 compatible LEDs
+* optional (!) a HC-05 bluetooth module (for sending distance values to your smartphone)
 * many wire
 * a soldering iron
 * patience 😉
