@@ -8,6 +8,8 @@ It is recommended to keep a distance of 1.5 meters.
 
 If the car is too close the LEDs start to flash.
 
+<img src="https://raw.githubusercontent.com/MCeddy/distance-warner/master/docs/distance-warner.jpg" width="300">
+
 ## you need
 
 * VS code with platform.io extension
