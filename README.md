@@ -10,6 +10,9 @@ If the car is too close the LEDs start to flash.
 
 <img src="https://raw.githubusercontent.com/MCeddy/distance-warner/master/docs/distance-warner.jpg" width="300">
 
+## demo
+[![bicycle distance warner demo](http://img.youtube.com/vi/M5IFnPChelQ/0.jpg)](https://www.youtube.com/watch?v=M5IFnPChelQ "bicycle distance warner demo")
+
 ## you need
 
 * VS code with platform.io extension
