@@ -1,6 +1,6 @@
 # distance-warner
 
-## discription
+## description
 
 You can use an ultrasonic sensor and an Arduino nano to measure the distance between your bike and a passing car.
 
