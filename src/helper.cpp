@@ -1,5 +1,3 @@
-#include <Arduino.h>
-
 #include <helper.h>
 
 unsigned int Helper::getLedSpeed(DistanceSensor sensor)

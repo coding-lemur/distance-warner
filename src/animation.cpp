@@ -1,10 +1,5 @@
 #include <animation.h>
 
-Animation::Animation() : isRunning(false),
-                         currentPalette(getEmptyPalette())
-{
-}
-
 void Animation::setup()
 {
     FastLED

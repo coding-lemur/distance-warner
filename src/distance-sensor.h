@@ -1,7 +1,6 @@
 #ifndef DistanceSensor_h
 #define DistanceSensor_h
 
-#include <Arduino.h>
 #include <NewPing.h>
 
 class DistanceSensor
