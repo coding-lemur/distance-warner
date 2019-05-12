@@ -1,19 +1,9 @@
 #include <Arduino.h>
 
+#include <config.h>
 #include <helper.h>
 #include <animation.h>
 #include <distance-sensor.h>
-
-// ultra sonic sensor
-#define TRIGGER_PIN 3
-#define ECHO_PIN 2
-#define MAX_DISTANCE 250      // cm
-#define SENSOR_ANGLE 45       // deg
-#define MIN_SIDE_DISTANCE 150 // cm
-#define PING_SPEED 250        // ms
-
-#define WARN_DURATION 2000  // ms
-#define BLUETOOTH_SPEED 500 // ms
 
 DistanceSensor sensor(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE, MIN_SIDE_DISTANCE, SENSOR_ANGLE);
 Animation animation;
@@ -26,14 +16,36 @@ unsigned long bluetoothTimer = 0;
 
 byte ledSpeed = 1;
 
+float measureVoltage()
+{
+  const unsigned char samples = 10;
+  float sum = 0;
+
+  for (unsigned char i = 0; i < samples; i++)
+  {
+    sum += analogRead(VOLTAGE_SENSOR_PIN);
+
+    delay(10);
+  }
+
+  return (sum / samples) * (5.0 / 1023.0);
+}
+
 void setup()
 {
+  pinMode(VOLTAGE_SENSOR_PIN, INPUT);
+
+  double voltage = measureVoltage();
+
   Serial.begin(9600);
 
   Serial.println("distance-warner connected!");
 
   Serial.print("min distance: ");
   Serial.println(sensor.getMinDistance());
+
+  Serial.print("voltage: ");
+  Serial.println(voltage);
 
   animation.setup();
 }
