@@ -16,26 +16,9 @@ unsigned long bluetoothTimer = 0;
 
 byte ledSpeed = 1;
 
-float measureVoltage()
-{
-  const unsigned char samples = 10;
-  float sum = 0;
-
-  for (unsigned char i = 0; i < samples; i++)
-  {
-    sum += analogRead(VOLTAGE_SENSOR_PIN);
-
-    delay(10);
-  }
-
-  return (sum / samples) * (5.0 / 1023.0);
-}
-
 void setup()
 {
   pinMode(VOLTAGE_SENSOR_PIN, INPUT);
-
-  double voltage = measureVoltage();
 
   Serial.begin(9600);
 
@@ -43,9 +26,6 @@ void setup()
 
   Serial.print("min distance: ");
   Serial.println(sensor.getMinDistance());
-
-  Serial.print("voltage: ");
-  Serial.println(voltage);
 
   animation.setup();
 }
