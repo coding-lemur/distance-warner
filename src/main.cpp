@@ -18,8 +18,6 @@ byte ledSpeed = 1;
 
 void setup()
 {
-  pinMode(VOLTAGE_SENSOR_PIN, INPUT);
-
   Serial.begin(9600);
 
   Serial.println("distance-warner connected!");
