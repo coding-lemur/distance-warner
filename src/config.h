@@ -1,5 +1,3 @@
-#define VOLTAGE_SENSOR_PIN A0
-
 // ultra sonic sensor
 #define TRIGGER_PIN 3
 #define ECHO_PIN 2
