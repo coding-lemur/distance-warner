@@ -3,3 +3,4 @@
 .piolibdeps
 .vscode/*
 !.vscode/extensions.json
+docs/p12496.db
