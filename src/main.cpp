@@ -49,7 +49,7 @@ void loop()
 
       if (now >= bluetoothTimer)
       {
-        // send data via Bluetooth
+        // send data via serial port
         Serial.print(sensor.getDistance());
         Serial.print(";");
         Serial.print(sensor.getSideDistance());
