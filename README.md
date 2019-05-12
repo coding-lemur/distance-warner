@@ -11,18 +11,19 @@ If the car is too close the LEDs start to flash.
 <img src="https://raw.githubusercontent.com/MCeddy/distance-warner/master/docs/distance-warner.jpg" width="300">
 
 ## demo
-[![bicycle distance warner demo](http://img.youtube.com/vi/M5IFnPChelQ/0.jpg)](https://www.youtube.com/watch?v=M5IFnPChelQ "bicycle distance warner demo")
+
+[![bicycle distance warner demo](http://img.youtube.com/vi/M5IFnPChelQ/0.jpg)](https://www.youtube.com/watch?v=M5IFnPChelQ 'bicycle distance warner demo')
 
 ## you need
 
-* VS code with platform.io extension
-* one Arduino Nano or Uno
-* one HC-SR04
-* a few WS2812 compatible LEDs
-* optional (!) a HC-05 bluetooth module (for sending distance values to your smartphone)
-* many wire
-* a soldering iron
-* patience 😉
+- VS code with platform.io extension
+- one Arduino Nano or Uno
+- one HC-SR04
+- a few WS2812 compatible LEDs
+- many wire
+- a soldering iron
+- patience 😉
 
 ## circuit diagram
+
 ![curcuit diagram](https://raw.githubusercontent.com/MCeddy/distance-warner/master/docs/sketch_bb.png)
