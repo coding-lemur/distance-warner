@@ -5,14 +5,14 @@
 #include <animation.h>
 #include <distance-sensor.h>
 
-DistanceSensor sensor(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE, MIN_SIDE_DISTANCE, SENSOR_ANGLE);
+DistanceSensor sensor;
 Animation animation;
 
 // timers
 unsigned long now;
 unsigned long sensorTimer = 0;
 unsigned long warnTimer = 0;
-unsigned long bluetoothTimer = 0;
+unsigned long dataTimer = 0;
 
 byte ledSpeed = 1;
 
@@ -45,16 +45,16 @@ void loop()
 
       animation.start();
 
-      if (now >= bluetoothTimer)
+      if (now >= dataTimer)
       {
+        dataTimer = millis() + BLUETOOTH_SPEED;
+
         // send data via serial port
         Serial.print(sensor.getDistance());
         Serial.print(";");
-        Serial.print(sensor.getSideDistance());
+        Serial.print(sensor.getDistanceSide());
         Serial.print(";");
-        Serial.println(sensor.getBehindDistance());
-
-        bluetoothTimer = millis() + BLUETOOTH_SPEED;
+        Serial.println(sensor.getDistanceRear());
       }
     }
   }

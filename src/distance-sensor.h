@@ -2,34 +2,30 @@
 #define DistanceSensor_h
 
 #include <NewPing.h>
+#include <config.h>
 
 class DistanceSensor
 {
 
-  public:
-    DistanceSensor(
-        unsigned char triggerPin,
-        unsigned char echoPin,
-        unsigned int maxDistance,
-        unsigned int minSideDistance,
-        unsigned int angle);
+public:
+  DistanceSensor();
 
-    void measure();
-    unsigned int getDistance();
-    double getSideDistance();
-    double getBehindDistance();
-    double getMinDistance();
-    bool isTooClose();
+  void measure();
+  unsigned int getDistance();
+  double getDistanceSide();
+  double getDistanceRear();
+  double getMinDistance();
+  bool isTooClose();
 
-  private:
-    NewPing sonar;
+private:
+  NewPing sonar;
 
-    const float sensorAngleRad;
-    const double minDistance;
+  const float sensorAngleRad;
+  const double minDistance;
 
-    unsigned int distance;
+  unsigned int distance;
 
-    double sideDistance;
-    double behindDistance;
+  double distanceSide;
+  double distanceRear;
 };
 #endif

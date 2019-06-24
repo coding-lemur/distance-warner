@@ -1,22 +1,17 @@
 #include <distance-sensor.h>
 
-DistanceSensor::DistanceSensor(
-    unsigned char triggerPin,
-    unsigned char echoPin,
-    unsigned int maxDistance,
-    unsigned int minSideDistance,
-    unsigned int angle)
-    : sonar(triggerPin, echoPin, maxDistance),
-      sensorAngleRad(angle * (M_PI / 180)),              // calc deg to rad
-      minDistance(minSideDistance / cos(sensorAngleRad)) // cos(a) = ank / hyp)
+DistanceSensor::DistanceSensor()
+    : sonar(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE),
+      sensorAngleRad(SENSOR_ANGLE * (M_PI / 180)),         // calc deg to rad
+      minDistance(MIN_SIDE_DISTANCE / cos(sensorAngleRad)) // cos(a) = ank / hyp)
 {
 }
 
 void DistanceSensor::measure()
 {
     distance = sonar.ping_cm();
-    sideDistance = cos(sensorAngleRad) * distance;
-    behindDistance = sin(sensorAngleRad) * distance;
+    distanceSide = cos(sensorAngleRad) * distance;
+    distanceRear = sin(sensorAngleRad) * distance;
 }
 
 unsigned int DistanceSensor::getDistance()
@@ -24,14 +19,14 @@ unsigned int DistanceSensor::getDistance()
     return distance;
 }
 
-double DistanceSensor::getSideDistance()
+double DistanceSensor::getDistanceSide()
 {
-    return sideDistance;
+    return distanceSide;
 }
 
-double DistanceSensor::getBehindDistance()
+double DistanceSensor::getDistanceRear()
 {
-    return behindDistance;
+    return distanceRear;
 }
 
 double DistanceSensor::getMinDistance()
